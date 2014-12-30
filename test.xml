@@ -1,0 +1,10 @@
+<questions>
+	<unit name="...">
+		<question type="open|close">
+			<text>...</text>
+			<answers>
+				<answer correct="false|true">...</answer>
+			</answers>
+		</question>
+	</unit>
+</questions>
