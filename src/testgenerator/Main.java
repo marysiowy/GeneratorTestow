@@ -23,6 +23,7 @@ public class Main {
 		    {
 		        System.out.println(reader.getText());
 		    }
+		    
 		    reader.next();
 		}
 	}
