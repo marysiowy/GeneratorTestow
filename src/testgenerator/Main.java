@@ -1,39 +1,19 @@
 package testgenerator;
 
-//import java.io.File;
-//import java.io.FileInputStream;
-//import java.io.FileNotFoundException;
-//import java.io.InputStream;
-//
-//import javax.xml.stream.XMLInputFactory;
-//import javax.xml.stream.XMLStreamException;
-//import javax.xml.stream.XMLStreamReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 
 public class Main {
 
-	public static void main(String[] args){
-		//podstawowe parsowanie
-//		File xmlFile = new File("test.xml");
-//		InputStream is = new FileInputStream(xmlFile);
-//		XMLInputFactory factory = XMLInputFactory.newInstance();
-//		XMLStreamReader reader = factory.createXMLStreamReader(is);
-//		while(reader.hasNext())
-//		{
-//		    if(reader.hasText())
-//		    {
-//		        System.out.println(reader.getText());
-//		    }
-//		    
-//		    reader.next();
-//		}
-//	}
+	public static void main(String[] args) throws JAXBException, FileNotFoundException, ParserConfigurationException, SAXException, IOException{
 
-		//nowa instancja parsera
-		QuestionParser dpe = new QuestionParser();
-				
-		//uruchomienie przykladu
-		dpe.runExample();
-				
+	Parser p = new Parser();
 
+	QuestonFilter qf = new QuestonFilter(p.paraseFromXMLToObject());
+	qf.printData(qf.getQuestions(2, ""));
 }
 }
