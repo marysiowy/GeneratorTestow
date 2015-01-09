@@ -1,0 +1,52 @@
+package testgenerator;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+
+public class QuestionFilter {
+	
+	private ArrayList<Question> question;
+	private Random rand = new Random();
+	
+	public QuestionFilter(ArrayList<Question> question){
+		this.question=question;
+	}
+	
+	public ArrayList<Question> getQuestions(int questionsNumber, String unitName)
+	{
+		
+		ArrayList<Question> q = new ArrayList<Question>();
+		ArrayList<Question> q1 = new ArrayList<Question>();
+		Question q2 = null,q3 = null;
+		int result;
+		
+		if(unitName!=""&&unitName!=null){
+			for(int i = 0; i <question.size();i++)
+			{
+				if(unitName.equals(question.get(i).getUnitName())){
+					q.add(question.get(i));
+				}
+			}					
+		}else q = question;
+		
+		for(int i=q.size(); i>=2;i--)
+		{						
+			result = rand.nextInt(i);		
+			
+			q2 = q.get(i-1);			
+			q3 = q.get(result);
+			
+			q.set(result,q2);			
+			q.set(i-1,q3);
+		}
+		for(int i = 0 ; i <questionsNumber;i++)
+			if(i<q.size())
+				q1.add(q.get(i));
+		
+		
+		return q1;
+	}
+
+}
