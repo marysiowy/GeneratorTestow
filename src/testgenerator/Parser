@@ -48,15 +48,15 @@ public class Parser {
 							questionText = question.get(j).queryString("text");
 							List<StructuredNode> answers = question.get(j).queryNodeList("answers");
 							
-						    for(int ij = 0 ; ij<answers.size() ; ij++)
+							for(int ij = 0 ; ij<answers.size() ; ij++)
 							{
-						    	answer.add(answers.get(ij).queryString("answer"));
-						    	answerCorrect.add(answers.get(ij).queryString("answer/@correct"));
+						    		answer.add(answers.get(ij).queryString("answer"));
+						    		answerCorrect.add(answers.get(ij).queryString("answer/@correct"));
 							}
-							
+							questions.add(new Question(unitName,questionType,questionText,answer,answerCorrect));
+					
 						}
 
-						questions.add(new Question(unitName,questionType,questionText,answer,answerCorrect));
 					}
 
 				} catch (XPathExpressionException e) {
