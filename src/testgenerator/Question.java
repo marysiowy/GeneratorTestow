@@ -1,5 +1,7 @@
 package testgenerator;
 
+import java.util.ArrayList;
+
 
 
 public class Question {
@@ -10,15 +12,16 @@ public class Question {
 	
 	private String questionText;
 	
-	private String answer;
 	
-	private String answerCorrect;
+	private ArrayList<String> answer;
+	
+	private ArrayList<String> answerCorrect;
 	
 	public Question(){
 		
 	}
 	
-	public Question(String unitName, String questionType, String questionText, String answer, String answerCorrect) {
+	public Question(String unitName, String questionType, String questionText, ArrayList<String> answer, ArrayList<String> answerCorrect) {
 		this.unitName = unitName;
 		this.questionType = questionType;
 		this.questionText = questionText;
@@ -48,18 +51,18 @@ public class Question {
 	public void setQuestionText(String questionText){
 		this.questionText = questionText;
 	}
-	public String getAnswer(){
+	public ArrayList<String> getAnswer(){
 		return answer;
 	}
 	
-	public void setAnswer(String answer){
+	public void setAnswer(ArrayList<String> answer){
 		this.answer = answer;
 	}	
-	public String getAnswerCorrect(){
+	public ArrayList<String> getAnswerCorrect(){
 		return answerCorrect;
 	}
 	
-	public void setAnswerCorrect(String answerCorrect){
+	public void setAnswerCorrect(ArrayList<String> answerCorrect){
 		this.answerCorrect = answerCorrect;
 	}
 
